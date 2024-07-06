@@ -12,3 +12,18 @@ fetch('menu.html')
         // Hata oluşursa konsola yazdırır
         console.error('Hata:', error);
     });
+
+
+fetch('footer.html')
+    .then(function(response) {
+        // Yanıtı text olarak döndürür
+        return response.text();
+    })
+    .then(function(data) {
+        // Çekilen veriyi belirli bir elementin içine yerleştirir
+        document.querySelector('#footer').innerHTML = data;
+    })
+    .catch(function(error) {
+        // Hata oluşursa konsola yazdırır
+        console.error('Hata:', error);
+    });
